@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example", "Example\Example.csproj", "{FE420A09-855A-4519-A6CB-F3B4EB1E52A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ventuz.ImageSharp.Native", "Ventuz.ImageSharp.Native\Ventuz.ImageSharp.Native.csproj", "{8E648B01-42BC-40E8-9BD7-A642C13D4110}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B34D5CE6-581F-4046-ADAC-3DEDC00AA953} = {B34D5CE6-581F-4046-ADAC-3DEDC00AA953}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ventuz.Native.ImageFormats", "Ventuz.Native.ImageFormats\Ventuz.Native.ImageFormats.vcxproj", "{B34D5CE6-581F-4046-ADAC-3DEDC00AA953}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{906072FF-BA0B-4321-8AB2-5EA221BB4C17}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE420A09-855A-4519-A6CB-F3B4EB1E52A4}.Debug|x64.ActiveCfg = Debug|x64
+		{FE420A09-855A-4519-A6CB-F3B4EB1E52A4}.Debug|x64.Build.0 = Debug|x64
+		{FE420A09-855A-4519-A6CB-F3B4EB1E52A4}.Release|x64.ActiveCfg = Release|x64
+		{FE420A09-855A-4519-A6CB-F3B4EB1E52A4}.Release|x64.Build.0 = Release|x64
+		{8E648B01-42BC-40E8-9BD7-A642C13D4110}.Debug|x64.ActiveCfg = Debug|x64
+		{8E648B01-42BC-40E8-9BD7-A642C13D4110}.Debug|x64.Build.0 = Debug|x64
+		{8E648B01-42BC-40E8-9BD7-A642C13D4110}.Release|x64.ActiveCfg = Release|x64
+		{8E648B01-42BC-40E8-9BD7-A642C13D4110}.Release|x64.Build.0 = Release|x64
+		{B34D5CE6-581F-4046-ADAC-3DEDC00AA953}.Debug|x64.ActiveCfg = Debug|x64
+		{B34D5CE6-581F-4046-ADAC-3DEDC00AA953}.Debug|x64.Build.0 = Debug|x64
+		{B34D5CE6-581F-4046-ADAC-3DEDC00AA953}.Release|x64.ActiveCfg = Release|x64
+		{B34D5CE6-581F-4046-ADAC-3DEDC00AA953}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5FDE130-D0EB-4AAB-85CB-9C9CE7727FD5}
+	EndGlobalSection
+EndGlobal

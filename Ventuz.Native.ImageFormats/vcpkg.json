@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    "libheif",
+    "openexr",
+    {
+      "name": "libavif",
+      "features": [ "dav1d" ]
+    }
+  ]
+}
