@@ -28,31 +28,46 @@ namespace Example
         [STAThread]
         static void Main()
         {
+            ApplicationConfiguration.Initialize();
+
+            // Register Ventuz.ImageSharp.Native image formats to default configuration
+
             Ventuz.ImageSharp.Native.Formats.Register();
+
+            // Add logging
 
             Ventuz.ImageSharp.Native.Logging.LogCallback += (level, str) =>
             {
-                System.Diagnostics.Debug.WriteLine($"{level}: {str}");
+                System.Diagnostics.Trace.WriteLine($"{level}: {str}");
             };
 
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            // show Open File dialog
 
+            static string MakeFilterExts(IEnumerable<string> exts) => String.Join(';', exts.Select(e => $"*.{e}"));
+
+            var allformats = SixLabors.ImageSharp.Configuration.Default.ImageFormats;
             var extensions = Ventuz.ImageSharp.Native.Formats.SupportedFormats.SelectMany(f => f.FileExtensions);
+            var allextensions = allformats.SelectMany(f => f.FileExtensions);
+
+            var filter = "New Image Formats|" + MakeFilterExts(extensions) +
+                         String.Concat(allformats.Select(f => $"|{f.Name}|{MakeFilterExts(f.FileExtensions)}")) +
+                         "|All Image Formats|" + MakeFilterExts(allextensions) +
+                         "|All files (*.*)|*.*";
 
             using OpenFileDialog ofd = new()
             {
                 Title = "Ventuz.ImageSharp.Native example",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
-                Filter = "New Image Formats|" + String.Join(";", extensions.Select(e => $"*.{e}")) + "|All files (*.*)|*.*",
+                Filter = filter,
                 SelectReadOnly = true,
             };
 
-            var x = ofd.ShowDialog();
-            if ( x == DialogResult.Cancel )
+            if ( ofd.ShowDialog() == DialogResult.Cancel )
                 return;
 
-            Application.Run(new Form1(ofd.FileName));
+            // load and show chosen file
+
+            Application.Run(new MainForm(ofd.FileName));
         }
     }
 }

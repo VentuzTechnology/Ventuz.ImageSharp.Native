@@ -25,14 +25,14 @@ using SixLabors.ImageSharp.Processing;
 
 namespace Example
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        public Form1(string path) : this()
+        public MainForm(string path) : this()
         {
             DecoderOptions opt = new()
             {
