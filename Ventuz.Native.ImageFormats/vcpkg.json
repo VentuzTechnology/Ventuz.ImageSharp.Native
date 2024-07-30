@@ -1,6 +1,10 @@
 {
   "dependencies": [
-    "libheif",
+    {
+      "name": "libheif",
+      "default-features": false
+    },
+      
     "openexr",
     {
       "name": "libavif",
