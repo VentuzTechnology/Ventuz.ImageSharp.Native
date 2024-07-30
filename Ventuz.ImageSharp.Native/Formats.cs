@@ -35,6 +35,8 @@ public static class Formats
         config.ImageFormatsManager.SetDecoder(Heic.Instance, new NativeDecoder(NativeImageFormat.Heic));
     }
 
+    public static IEnumerable<IImageFormat> SupportedFormats => [Avif.Instance, OpenEXR.Instance, Heic.Instance];
+
     public sealed class Avif : IImageFormat
     {
         public static readonly Avif Instance = new();
@@ -55,7 +57,7 @@ public static class Formats
 
     public sealed class Heic : IImageFormat
     {
-        public static readonly Avif Instance = new();
+        public static readonly Heic Instance = new();
         public string Name => "HEIC";
         public string DefaultMimeType => "image/heic";
         public IEnumerable<string> MimeTypes => [DefaultMimeType];

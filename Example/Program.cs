@@ -35,10 +35,24 @@ namespace Example
                 System.Diagnostics.Debug.WriteLine($"{level}: {str}");
             };
 
-            // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            var extensions = Ventuz.ImageSharp.Native.Formats.SupportedFormats.SelectMany(f => f.FileExtensions);
+
+            using OpenFileDialog ofd = new()
+            {
+                Title = "Ventuz.ImageSharp.Native example",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+                Filter = "New Image Formats|" + String.Join(";", extensions.Select(e => $"*.{e}")) + "|All files (*.*)|*.*",
+                SelectReadOnly = true,
+            };
+
+            var x = ofd.ShowDialog();
+            if ( x == DialogResult.Cancel )
+                return;
+
+            Application.Run(new Form1(ofd.FileName));
         }
     }
 }

@@ -27,20 +27,19 @@ namespace Example
 {
     public partial class Form1 : Form
     {
-      
         public Form1()
         {
             InitializeComponent();
+        }
 
-            Configuration cfg = Configuration.Default.Clone();
-
+        public Form1(string path) : this()
+        {
             DecoderOptions opt = new()
             {
                 SkipMetadata = false
             };
 
-            var id = SixLabors.ImageSharp.Image.Identify(opt, @"C:\Users\TammoHinrichs\Pictures\avif-sample-images-master\fox.profile1.8bpc.yuv444.odd-width.odd-height.avif");
-            using var image = SixLabors.ImageSharp.Image.Load(opt, @"C:\Users\TammoHinrichs\Pictures\avif-sample-images-master\fox.profile1.8bpc.yuv444.odd-width.odd-height.avif");
+            using var image = SixLabors.ImageSharp.Image.Load(opt, path);
          
             image.Mutate(i => i.AutoOrient());
 
