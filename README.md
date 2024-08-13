@@ -40,7 +40,7 @@ Prerequisites:
 
 ### Usage
 
-There's an example project that should be simple enough, but here's the easy version: Add Ventuz.ImageSharp.Native to your .NET project, make the native Ventuz.Native.ImageFormats.dll is deployed to your application folder, and call ```Ventuz.ImageSharp.Native.Formats.Register();``` before trying to load any images.
+There's an example project that should be simple enough, but here's the easy version: Add Ventuz.ImageSharp.Native to your .NET project, make sure the native Ventuz.Native.ImageFormats.dll is deployed to your application folder, and call ```Ventuz.ImageSharp.Native.Formats.Register();``` before trying to load any images.
 
 
 
