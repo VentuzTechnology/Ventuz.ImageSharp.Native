@@ -32,6 +32,10 @@ Used 3rd party libraries:
 * libjpeg-turbo, https://github.com/libjpeg-turbo/libjpeg-turbo, BSD-style split license
 * libyuv, https://chromium.googlesource.com/libyuv/libyuv/, BSD-style license
 
+### Patents
+
+Please beware that HEVC, the codec used in HEIF, is subject to patent restrictions. Only distribute it if you have got the proper licenses.
+
 ### Building
 
 Prerequisites:
